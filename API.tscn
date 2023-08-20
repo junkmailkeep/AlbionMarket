@@ -27,27 +27,30 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Cloth_Button" type="Button" parent="Control"]
-offset_left = 429.0
-offset_top = 195.0
-offset_right = 552.0
-offset_bottom = 226.0
+layout_mode = 0
+offset_left = 471.0
+offset_top = 103.0
+offset_right = 594.0
+offset_bottom = 134.0
 text = "Pull Cloth Data
 "
 
 [node name="Leather_Button" type="Button" parent="Control"]
-offset_left = 429.0
-offset_top = 195.0
-offset_right = 552.0
-offset_bottom = 226.0
-text = "Pull Cloth Data
+layout_mode = 0
+offset_left = 461.0
+offset_top = 138.0
+offset_right = 603.0
+offset_bottom = 169.0
+text = "Pull Leather Data
 "
 
 [node name="Plate_Button" type="Button" parent="Control"]
-offset_left = 429.0
-offset_top = 195.0
-offset_right = 552.0
-offset_bottom = 226.0
-text = "Pull Cloth Data
+layout_mode = 0
+offset_left = 473.0
+offset_top = 63.0
+offset_right = 596.0
+offset_bottom = 94.0
+text = "Pull Plate Data
 "
 
 [connection signal="request_completed" from="HTTP_Cloth" to="." method="_on_http_cloth_request_completed"]
