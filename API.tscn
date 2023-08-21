@@ -5,20 +5,10 @@
 [node name="Base" type="Node2D"]
 script = ExtResource("1_sfwir")
 
-[node name="HTTP_Cloth" type="HTTPRequest" parent="."]
-download_file = "res://Data/Cloth.txt"
+[node name="HTTP_1" type="HTTPRequest" parent="."]
 use_threads = true
-max_redirects = 1
-
-[node name="HTTP_Leather" type="HTTPRequest" parent="."]
-download_file = "res://Data/Leather.txt"
-use_threads = true
-max_redirects = 1
-
-[node name="HTTP_Plate" type="HTTPRequest" parent="."]
-download_file = "res://Data/Plate.txt"
-use_threads = true
-max_redirects = 1
+max_redirects = 2
+timeout = 5.0
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -26,34 +16,15 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Cloth_Button" type="Button" parent="Control"]
+[node name="Pull_All_Button" type="Button" parent="Control"]
 layout_mode = 0
 offset_left = 471.0
 offset_top = 103.0
 offset_right = 594.0
 offset_bottom = 134.0
-text = "Pull Cloth Data
+text = "Pull All Data
+
 "
 
-[node name="Leather_Button" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 461.0
-offset_top = 138.0
-offset_right = 603.0
-offset_bottom = 169.0
-text = "Pull Leather Data
-"
-
-[node name="Plate_Button" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 473.0
-offset_top = 63.0
-offset_right = 596.0
-offset_bottom = 94.0
-text = "Pull Plate Data
-"
-
-[connection signal="request_completed" from="HTTP_Cloth" to="." method="_on_http_cloth_request_completed"]
-[connection signal="pressed" from="Control/Cloth_Button" to="." method="_on_cloth_button_pressed"]
-[connection signal="pressed" from="Control/Leather_Button" to="." method="_on_leather_button_pressed"]
-[connection signal="pressed" from="Control/Plate_Button" to="." method="_on_plate_button_pressed"]
+[connection signal="request_completed" from="HTTP_1" to="." method="_on_http_1_request_completed"]
+[connection signal="pressed" from="Control/Pull_All_Button" to="." method="_on_pull_all_button_pressed"]

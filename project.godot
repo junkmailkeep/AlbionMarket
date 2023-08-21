@@ -16,7 +16,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-URL="*res://URLS.gd"
+URLS="*res://URLS.gd"
 API="*res://APIPull.gd"
 
 [rendering]
