@@ -1,8 +1,28 @@
-from albion_data import Var
-t4leather = Var("T4_LEATHER","Fort Sterling","sell_price_min")
-t4hide = Var("T4_HIDE","Fort Sterling","sell_price_min")
-t3leather = Var("T3_LEATHER","Fort Sterling","sell_price_min")
-if (2 * t4hide + t3leather) < t4leather: #triggers a single API call
-    print("refine t4hide")
-else:
-    print("not worth it")
+import customtkinter as ctk
+import API
+
+
+
+ctk.set_appearance_mode("dark")
+
+class App(ctk.CTk):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.title("Albion Market")
+
+        self.geometry("800x800")
+
+        self.pulldataButton = ctk.CTkButton(self,text="pull data", command = self.pulldata)
+        self.pulldataButton.pack()
+
+        
+
+
+    def pulldata(self):
+        API.pullall()
+
+if __name__ == "__main__":
+    app = App()
+
+    app.mainloop()
