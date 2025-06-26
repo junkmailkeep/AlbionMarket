@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Results for {{ item_id }}</title>
+  </head>
+  <body>
+    <h1>Results for {{ item_id }}</h1>
+    {% if results %}
+    <table border="1">
+      <tr>
+        <th>City</th>
+        <th>Quality</th>
+        <th>Sell Min</th>
+        <th>Sell Max</th>
+        <th>Buy Min</th>
+        <th>Buy Max</th>
+      </tr>
+      {% for r in results %}
+      <tr>
+        <td>{{ r.city }}</td>
+        <td>{{ r.quality }}</td>
+        <td>{{ r.sell_price_min }}</td>
+        <td>{{ r.sell_price_max }}</td>
+        <td>{{ r.buy_price_min }}</td>
+        <td>{{ r.buy_price_max }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+    <p>No data found.</p>
+    {% endif %}
+    <p><a href="/">Back</a></p>
+  </body>
+</html>
